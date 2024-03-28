@@ -8,21 +8,96 @@
 </head>
 
 <body>
-  <input type="file" id="input" multiple>
+  <input type="file" id="input" multiple><br>
+  <button id="btn-louder">louder</button>
+  <button id="btn-reset-volume">reset</button>
+  <button id="btn-quieter">quieter</button>
+  <span id="span-volume"></span>
+  <br>
+  <button id="btn-previous">previous</button>
+  <button id="btn-next">next</button><br>
+  <span id="span-playing"></span>
+  <br>
+  <video id="player" controls="true"></video>
   <script>
- const inputElement = document.getElementById("input");
+   (() => {
+    let fileList = [];
+    const inputElement = document.getElementById("input");
+    const playerElement = document.getElementById("player");
+    
+    const btnLouder = document.getElementById("btn-louder");
+    const btnResetVolume = document.getElementById("btn-reset-volume");
+    const btnQuieter = document.getElementById("btn-quieter");
+
+    const spanVolume = document.getElementById("span-volume");
+    const spanPlaying = document.getElementById("span-playing");
+
+    const btnPrevious = document.getElementById("btn-previous");
+    const btnNext = document.getElementById("btn-next");
+    
+    const playIdxHelper = (function () {
+      let idx = 0;
+      return {
+        prev: function () {
+          idx = Math.max(idx - 1, 0);
+          this.play();
+        },
+        next: function () {
+          idx = (idx + 1) % (fileList || []).length;
+          this.play();
+        },
+        play: function () {
+          playerElement.src = URL.createObjectURL(fileList[idx]);
+          spanPlaying.innerText = fileList[idx].name;
+          playerElement.play();
+        }
+      }
+    })();
+
+    let audioContext = undefined;
+    let sourceNode = undefined;
+    let gainNode = undefined;
+    
+
     inputElement.addEventListener("change", function () {
-      const fileList = this.files;
-        Promise
-        .all(
-            Array
-            .from(fileList)
-            .map(file => readJSONText(file)))
-        .then(obj => {
-            globalObj = obj;
-            console.table(globalObj);
-        });
+      fileList = [...this.files];
+
+      if (!audioContext) {
+        audioContext = new AudioContext();
+        sourceNode = audioContext.createMediaElementSource(playerElement);
+        gainNode = audioContext.createGain();
+        sourceNode.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+      }
+
+      playIdxHelper.play();
     }, false);
+
+
+    btnLouder.addEventListener("click", function () {
+      gainNode.gain.value += 0.2;
+      spanVolume.innerText = gainNode.gain.value;
+    });
+
+    btnResetVolume.addEventListener("click", function () {
+      gainNode.gain.value = 1;
+      spanVolume.innerText = gainNode.gain.value;
+    });
+
+    btnQuieter.addEventListener("click", function () {
+      gainNode.gain.value = Math.max(gainNode.gain.value - 0.2, 0);
+      spanVolume.innerText = gainNode.gain.value;
+    });
+
+    btnPrevious.addEventListener("click", function () {
+      playIdxHelper.prev();
+    });
+
+    btnNext.addEventListener("click", function () {
+      playIdxHelper.next();
+    });
+   })()
   </script>
 </body>
+
 </html>
