@@ -96,7 +96,56 @@
     btnNext.addEventListener("click", function () {
       playIdxHelper.next();
     });
-   })()
+   })();
+  
+
+
+
+/*
+
+
+    
+  // Define your array of time ranges
+  const timeRanges = [
+    { start: 0, end: 2 },   // Range 1: 0s to 10s
+    { start: 4, end: 6 }
+  ];
+  
+
+  const sorted = timeRanges.sort((a, b) => {
+  	return a.start - b.start;
+  });
+    
+  // Add an event listener to the 'timeupdate' event of the video element
+  playerElement.addEventListener('timeupdate', () => {
+    // Get the current playback time of the video
+    const currentTime = playerElement.currentTime;
+  
+    // Check if the current time is within any of the time ranges
+    const isInTimeRange = timeRanges.some(range => {
+      return currentTime >= range.start && currentTime <= range.end
+    });
+    
+    
+    if (!isInTimeRange) {
+    	let should = sorted.reduce((p, c, currentIndex) => {
+      	if (currentTime > p && currentTime < c.start) {
+          	return c.start
+          } else {
+          	return c.end
+          }
+      }, 0);
+      
+       if (should === timeRanges[timeRanges.length -1].end) {
+        should = timeRanges[0].start
+      }
+      
+      playerElement.currentTime = should;
+  
+      // console.log(`${currentTime} ${should}`);
+    }
+  });
+  */
   </script>
 </body>
 
