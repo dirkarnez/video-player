@@ -83,12 +83,10 @@
 
 	<script>
     window.addEventListener('DOMContentLoaded', () => {
-	let time = 0;
-	let duration;
-	let paused = true;
 
+	let lastMouseDown = new Date();
 	let showControls = true;
-	let showControlsTimeout;
+	let showControlsTimeout = NaN;
 
 	const video = document.getElementById('video');
 	const controls = document.getElementById('controls');
@@ -101,25 +99,14 @@
 		showControlsTimeout = setTimeout(() => (showControls = false), 2500);
 		showControls = true;
 
-		if (!duration) return;
+		if (!video.duration) return;
 		if (e.type !== 'touchmove' && !(e.buttons & 1)) return;
 
 		const clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
 		const { left, right } = video.getBoundingClientRect();
-		time = (duration * (clientX - left)) / (right - left);
+		video.currentTime = (video.duration * (clientX - left)) / (right - left);
 	}
-
-	function handleMousedown(e) {
-		lastMouseDown = new Date();
-	}
-
-	function handleMouseup(e) {
-		if (new Date() - lastMouseDown < 300) {
-			if (paused) video.play();
-			else video.pause();
-		}
-	}
-
+	
 	function format(seconds) {
 		if (isNaN(seconds)) return '...';
 
@@ -132,22 +119,16 @@
 
 	video.addEventListener('mousemove', handleMove);
 	video.addEventListener('touchmove', handleMove);
-	video.addEventListener('mousedown', handleMouseup);
-	video.addEventListener('mouseup', handleMouseup);
+
 	video.addEventListener('timeupdate', () => {
-		time = video.currentTime;
+		currentTime.textContent = format(video.currentTime);
+		progress.value = video.currentTime / video.duration || 0;
+		controls.style.opacity = video.duration && showControls ? 1 : 0;
 	});
 
 	video.addEventListener('loadedmetadata', () => {
-		duration = video.duration;
-		durationTime.textContent = format(duration);
+		durationTime.textContent = format(video.duration);
 	});
-
-	setInterval(() => {
-		currentTime.textContent = format(time);
-		progress.value = time / duration || 0;
-		controls.style.opacity = duration && showControls ? 1 : 0;
-	}, 1000);
 });
 </script>
 </body>
