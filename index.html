@@ -56,7 +56,7 @@
     // -1 to 1
     const scale = (((e.offsetX / e.target.clientWidth) - 0.5) * 2);
     // -5 to 5 seconds
-    const scaled = scale * 5;
+    const scaled = scale * 10;
     const player = document.getElementById("player");
     player.currentTime = Math.min(Math.max(0, player.currentTime + scaled), player.duration);
   }
