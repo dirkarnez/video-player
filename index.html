@@ -32,6 +32,13 @@
 </div>
 <div class="row">
   <div class="col">
+    <div style="width: 100%; height: 10px; border: 1px solid black; display: flex; align-items: center; justify-content: center;" onclick="fineSeek(event)">
+      <div style="height: 100%; width: 10px; background: blue"></div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
     <ul class="list-group" id="cue-sheet-container">
       <!-- <li class="list-group-item">An item</li>
       <li class="list-group-item">A second item</li>
@@ -44,6 +51,16 @@
 
 </div>
   <script>
+
+  function fineSeek(e) {
+    // -1 to 1
+    const scale = (((e.offsetX / e.target.clientWidth) - 0.5) * 2);
+    // -5 to 5 seconds
+    const scaled = scale * 5;
+    const player = document.getElementById("player");
+    player.currentTime = Math.min(Math.max(0, player.currentTime + scaled), player.duration);
+  }
+
    (() => {
     let fileList = [];
     let cueList = [];
