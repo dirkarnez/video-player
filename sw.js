@@ -8,6 +8,6 @@ self.addEventListener('install', (event) => {
 });
 
 workbox.routing.registerRoute(
-  ({ url }) => url.pathname === '/',
+  ({ url }) => url.pathname === '/video-player/',
   new workbox.strategies.NetworkFirst()
 );
