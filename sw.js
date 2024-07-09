@@ -8,6 +8,8 @@ self.addEventListener('install', (event) => {
 });
 
 workbox.routing.registerRoute(
-  ({ url }) => url.pathname === '/video-player/',
+  ({ url }) => {
+    return url.pathname === '/video-player/' || url.host === 'cdn.jsdelivr.net'
+  }},
   new workbox.strategies.NetworkFirst()
 );
