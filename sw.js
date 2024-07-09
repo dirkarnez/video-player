@@ -13,5 +13,5 @@ workbox.routing.registerRoute(
       || url.host === 'cdn.jsdelivr.net'
       || url.href.endsWith("better-cue-parser.0.3.1.min.js")
   },
-  new workbox.strategies.NetworkFirst()
+  new workbox.strategies.CacheFirst()
 );
