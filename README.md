@@ -8,3 +8,4 @@
 - [ ] Zoom
 - [ ] Position
 - [ ] PWA icon
+- [ ] Rotate
