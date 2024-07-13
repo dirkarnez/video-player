@@ -7,5 +7,5 @@
 - [x] Gain
 - [ ] Zoom
 - [ ] Position
-- [ ] PWA icon
+- [x] PWA icon
 - [ ] Rotate
