@@ -9,3 +9,6 @@
 - [ ] Position
 - [x] PWA icon
 - [ ] Rotate
+- [ ] Cue file
+- [ ] <audio> support
+- [ ] audio only support
