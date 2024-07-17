@@ -12,4 +12,4 @@
 - [ ] Cue file
 - [ ] <audio> support
 - [ ] audio only support
-- [ ] app-like UI
+- [ ] [app-like UI](./app.html)
