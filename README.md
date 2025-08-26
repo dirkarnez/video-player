@@ -3,13 +3,14 @@
 - [ ] [Manipulating video using canvas - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
 - [x] Coarse / Fine timeline
 - [ ] [Time range](https://github.com/dirkarnez/video-player/blob/main/index.html#L108)
-- [x] offline
+- [ ] offline
 - [x] Gain
 - [ ] Zoom
 - [ ] Position
 - [x] PWA icon
 - [ ] Rotate
-- [ ] Cue file
+- [x] Cue file
+- [ ] [video-dev/hls.js: HLS.js is a JavaScript library that plays HLS in browsers with support for MSE.](https://github.com/video-dev/hls.js)
 - [ ] <audio> support
 - [ ] audio only support
 - [ ] [app-like UI](./app.html)
