@@ -4,6 +4,7 @@
 - [x] Coarse / Fine timeline
 - [ ] [Time range](https://github.com/dirkarnez/video-player/blob/main/index.html#L108)
 - [ ] offline
+- [ ] Player-only mode (not fullscreen, it is different)
 - [x] Gain
 - [ ] Zoom
 - [ ] Position
