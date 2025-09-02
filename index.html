@@ -47,46 +47,43 @@
 <body>
 
 <div class="container-fluid p-5">
-<div class="row">
-  <div class="col">
-     <input  class="form-control" type="file" id="input" multiple><br>
-  <button class="btn btn-primary" id="btn-louder">louder</button>
-  <button class="btn btn-primary" id="btn-reset-volume">reset</button>
-  <button class="btn btn-primary" id="btn-quieter">quieter</button>
-  <span id="span-volume"></span>
+  <div class="row">
+    <div class="col">
+      <input  class="form-control" type="file" id="input" multiple><br>
+      <button class="btn btn-primary" id="btn-louder">louder</button>
+      <button class="btn btn-primary" id="btn-reset-volume">reset</button>
+      <button class="btn btn-primary" id="btn-quieter">quieter</button>
+      <span id="span-volume"></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary" id="btn-previous">previous</button>
+      <button class="btn btn-primary" id="btn-next">next</button><br>
+      <span id="span-playing"></span>
+    </div>
+  </div>
+</div>
+<video id="player" style="width: 100%" controls="true" loop="true"></video>
+<div class="container-fluid p-5">
+  <div class="row">
+    <div class="col">
+      <div style="width: 100%; height: 10px; border: 1px solid black; display: flex; align-items: center; justify-content: center;" onclick="fineSeek(event)">
+        <div style="height: 100%; width: 10px; background: blue"></div>
       </div>
-</div>
-<div class="row">
-  <div class="col">
-  <button class="btn btn-primary" id="btn-previous">previous</button>
-  <button class="btn btn-primary" id="btn-next">next</button><br>
-  <span id="span-playing"></span>
-    </div>
-</div>
-<div class="row">
-  <div class="col">
-  	<video id="player" style="width: 100%" controls="true" loop="true"></video>
-  </div>
-</div>
-<div class="row">
-  <div class="col">
-    <div style="width: 100%; height: 10px; border: 1px solid black; display: flex; align-items: center; justify-content: center;" onclick="fineSeek(event)">
-      <div style="height: 100%; width: 10px; background: blue"></div>
     </div>
   </div>
-</div>
-<div class="row mt-5">
-  <div class="col">
-    <ul class="list-group" id="cue-sheet-container">
+  <div class="row mt-5">
+    <div class="col">
+      <ul class="list-group" id="cue-sheet-container">
       <!-- <li class="list-group-item">An item</li>
       <li class="list-group-item">A second item</li>
       <li class="list-group-item">A third item</li>
       <li class="list-group-item">A fourth item</li>
       <li class="list-group-item">And a fifth one</li> -->
-    </ul>
+      </ul>
+    </div>
   </div>
-</div>
-
 </div>
   <script>
 
