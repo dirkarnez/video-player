@@ -5,6 +5,10 @@
 - [ ] [Time range](https://github.com/dirkarnez/video-player/blob/main/index.html#L108)
 - [ ] offline
 - [ ] Player-only mode (not fullscreen, it is different)
+- [ ] Subtitles
+  - [lrusso/MediaPlayer: Media Player in JavaScript that supports MP4 files with subtitles in SRT format and MP3 files](https://github.com/lrusso/MediaPlayer)
+  - [martinlindhe/subtitles: Go library and command-line tools for manipulating .srt, .vtt and .ssa subtitles](https://github.com/martinlindhe/subtitles)
+  - [dirkarnez/webvtt-boilerplate](https://github.com/dirkarnez/webvtt-boilerplate)
 - [x] Gain
 - [ ] Zoom
 - [ ] Position
