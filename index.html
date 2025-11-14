@@ -153,14 +153,15 @@
               if (!!cueSheet) {
                 cueSheetContainer.innerHTML = "";
                 cueSheet.files[0].tracks.forEach(track => {
-                  const li = document.createElement("li");
-                  li.className = "list-group-item";
-                  li.innerText = `${track.title}`;
-                  li.addEventListener("click", () => {
+                  const a = document.createElement("a");
+                  a.classList.add("list-group-item");
+                  a.classList.add("list-group-item-action");
+                  a.innerText = `${track.title}`;
+                  a.href = `javascript:void(0)`;
+                  a.addEventListener("click", () => {
                     playerElement.currentTime = track.indexes[0].time.min * 60 + track.indexes[0].time.sec + (track.indexes[0].time.frame / 100);
-                  })
-
-                  cueSheetContainer.appendChild(li);
+                  });
+                  cueSheetContainer.appendChild(a);
                 })
               }
             })
