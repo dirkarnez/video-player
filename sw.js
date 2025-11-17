@@ -11,6 +11,7 @@ workbox.routing.registerRoute(
   ({ url }) => {
     return url.pathname === '/video-player/'
       || url.host === 'cdn.jsdelivr.net'
+      || url.host === 'cdnjs.cloudflare.com'
       || url.href.endsWith("better-cue-parser.0.3.1.min.js")
   },
   new workbox.strategies.CacheFirst({
