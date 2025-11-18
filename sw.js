@@ -1,16 +1,5 @@
 importScripts('https://cdnjs.cloudflare.com/ajax/libs/workbox-sw/7.0.0/workbox-sw.min.js');
 
-
-workbox.precaching.precacheAndRoute(
-  [
-    {url: '/index.html', revision: null},
-  ],
-  {
-    // Ignore all URL parameters.
-    ignoreURLParametersMatching: [/.*/],
-  }
-);
-
 workbox.core.clientsClaim();
 
 self.addEventListener('install', (event) => {
