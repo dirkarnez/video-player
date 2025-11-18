@@ -11,13 +11,7 @@ self.addEventListener('install', (event) => {
 // The __WB_MANIFEST is replaced by Workbox build tools during the build step with all necessary files.
 // If you're not using a build step, manually provide the list of assets you need cached, example:
 const PRECACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/video-player/',
-  '/main.js',
-  '/styles.css',
-  '/favicon.ico',
-  // Add any additional assets your app needs to bootstrap offline
+  './index.html'
 ];
 
 // Precache and route these core files.
