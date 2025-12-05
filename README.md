@@ -12,6 +12,7 @@
 - [x] Gain
 - [ ] Zoom
 - [ ] Position
+- [ ] spin timestamp and ranges
 - [x] PWA icon
 - [ ] Rotate
 - [x] Cue file
