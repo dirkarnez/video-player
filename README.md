@@ -3,18 +3,16 @@
 - [ ] [Manipulating video using canvas - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas)
 - [x] Coarse / Fine timeline
 - [ ] [Time range](https://github.com/dirkarnez/video-player/blob/main/index.html#L108)
-- [ ] offline
+- [x] offline
 - [ ] Player-only mode (not fullscreen, it is different)
 - [ ] Subtitles
   - [lrusso/MediaPlayer: Media Player in JavaScript that supports MP4 files with subtitles in SRT format and MP3 files](https://github.com/lrusso/MediaPlayer)
   - [martinlindhe/subtitles: Go library and command-line tools for manipulating .srt, .vtt and .ssa subtitles](https://github.com/martinlindhe/subtitles)
   - [dirkarnez/webvtt-boilerplate](https://github.com/dirkarnez/webvtt-boilerplate)
 - [x] Gain
-- [ ] Zoom
-- [ ] Position
-- [ ] spin timestamp and ranges
+- [ ] Zoom + Rotate + Position with clipping
+- [ ] Spin timestamp and ranges
 - [x] PWA icon
-- [ ] Rotate
 - [x] Cue file
 - [ ] [video-dev/hls.js: HLS.js is a JavaScript library that plays HLS in browsers with support for MSE.](https://github.com/video-dev/hls.js)
 - [ ] <audio> support
