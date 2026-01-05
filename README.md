@@ -18,3 +18,5 @@
 - [ ] <audio> support
 - [ ] audio only support
 - [ ] [app-like UI](./app.html)
+- [ ] Pitch detection
+  - [cwilso/PitchDetect: Pitch detection in Web Audio using autocorrelation](https://github.com/cwilso/PitchDetect)
