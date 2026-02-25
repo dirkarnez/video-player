@@ -10,6 +10,9 @@
   - [martinlindhe/subtitles: Go library and command-line tools for manipulating .srt, .vtt and .ssa subtitles](https://github.com/martinlindhe/subtitles)
   - [dirkarnez/webvtt-boilerplate](https://github.com/dirkarnez/webvtt-boilerplate)
 - [x] Gain
+- [ ] ReplayGain
+  - [albertz/music-player: Music player - endlessly plays your music](https://github.com/albertz/music-player)
+    - [music-player/WhatIsAMusicPlayer.md at master · albertz/music-player](https://github.com/albertz/music-player/blob/master/WhatIsAMusicPlayer.md)
 - [ ] Zoom + Rotate + Position with clipping
 - [ ] Spin timestamp and ranges
 - [x] PWA icon
