@@ -23,3 +23,9 @@
 - [ ] [app-like UI](./app.html)
 - [ ] Pitch detection
   - [cwilso/PitchDetect: Pitch detection in Web Audio using autocorrelation](https://github.com/cwilso/PitchDetect)
+### Reference
+- [chrisweb/web-audio-api-player: 🎶 An opensource javascript (typescript) audio player for the browser, built using the Web Audio API with support for HTML5 audio elements or XMLHttpRequest](https://github.com/chrisweb/web-audio-api-player)
+- [jeffvli/feishin: A modern self-hosted music player.](https://github.com/jeffvli/feishin)
+- [audioling/audioling: Audio player with a focus on self-hosted music server support](https://github.com/audioling/audioling)
+- [jeffvli/sonixd: A full-featured Subsonic/Jellyfin compatible desktop music player](https://github.com/jeffvli/sonixd)
+- [WebLP by KLEVGR.](https://weblp.klevgrand.se/)
